@@ -1,0 +1,33 @@
+<assembly>
+    <id>bin</id>
+    <formats>
+        <format>tar.gz</format>
+    </formats>
+    <dependencySets>
+        <dependencySet>
+            <useProjectArtifact>true</useProjectArtifact>
+            <outputDirectory>lib</outputDirectory>
+        </dependencySet>
+    </dependencySets>
+    <fileSets>
+        <fileSet>
+            <outputDirectory>/</outputDirectory>
+            <includes>
+                <include>README.txt</include>
+            </includes>
+        </fileSet>
+        <fileSet>
+            <directory>src/main/profiles/${build.profile.id}</directory>
+            <outputDirectory>/config</outputDirectory>
+            <includes>
+                <include>app.properties</include>
+                <include>log4j2.xml</include>
+                <include>cluster.conf</include>
+            </includes>
+        </fileSet>
+        <fileSet>
+            <directory>src/main/bin</directory>
+            <outputDirectory>/bin</outputDirectory>
+        </fileSet>
+    </fileSets>
+</assembly>
